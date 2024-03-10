@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f606d52-103e-4e59-a669-f71b0c4f67c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/tests/Lesson 2 HW-Target.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/steps/Target_search_steps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/tests/ET_Target_Search.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/features/tests/Lesson 3 HW CSS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/test file qa.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Gherkin feature file" />
       </list>
     </option>
   </component>
@@ -41,6 +45,8 @@
   "keyToString": {
     "Python.Lesson 2 HW-Target.executor": "Run",
     "Python.Lesson 2 HW.executor": "Run",
+    "Python.Lesson 3 HW CSS.executor": "Run",
+    "Python.Target_search_steps.executor": "Run",
     "Python.sample_script.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -107,7 +113,7 @@
       <updated>1706839075820</updated>
       <workItem from="1706839080327" duration="2761000" />
       <workItem from="1706890022626" duration="17000" />
-      <workItem from="1706890220676" duration="16303000" />
+      <workItem from="1706890220676" duration="19455000" />
     </task>
     <servers />
   </component>
@@ -116,7 +122,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_selenium_automation$sample_script.coverage" NAME="sample_script Coverage Results" MODIFIED="1710007368403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_selenium_automation$Lesson_3_HW_CSS.coverage" NAME="Lesson 3 HW CSS Coverage Results" MODIFIED="1710036094498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/tests" />
+    <SUITE FILE_PATH="coverage/python_selenium_automation$Target_search_steps.coverage" NAME="Target_search_steps Coverage Results" MODIFIED="1710034305993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/steps" />
     <SUITE FILE_PATH="coverage/python_selenium_automation$Lesson_2_HW.coverage" NAME="Lesson 2 HW Coverage Results" MODIFIED="1710014562332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/tests" />
-    <SUITE FILE_PATH="coverage/python_selenium_automation$Lesson_2_HW_Target.coverage" NAME="Lesson 2 HW-Target Coverage Results" MODIFIED="1710019001517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/tests" />
+    <SUITE FILE_PATH="coverage/python_selenium_automation$Lesson_2_HW_Target.coverage" NAME="Lesson 2 HW-Target Coverage Results" MODIFIED="1710019035160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/tests" />
   </component>
 </project>
