@@ -10,18 +10,24 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @given('Open Target main page')
 def open_target_main(context):
-    context.driver.get('https://www.target.com/')
+    #context.driver.get('https://www.target.com/')
+    context.app.main_page.open_main()
+
+
+@when('Search for {product}')
+def search_product(context, product):
+    context.app.header.search_product()
 
 
 @when('Click on the Shopping cart')
 def click_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartIcon']").click()
+    context.app.header.click_cart_icon()
+
 
 
 @then('verify “Your cart is empty” message is shown')
 def verify_cart_empty_message(context):
-    actual_text = context.driver.find_element(By.CSS_SELECTOR,  "h1[class*='StyledHeading']").text
-    assert 'Your cart is empty' == actual_text, f"expected 'Your cart is empty' but got {actual_text}"
+    context.app.cart_page.verify_cart_empty_message()
 
 
 @when('Click sign in')
@@ -51,19 +57,22 @@ def verify_benefits_to_target(context):
     assert len(benefits_to_target) == 5, f"expected '5' but got {len(benefits_to_target)}"
 
 
-@when ('Search for {product}')
-def search_product(context, product):
-    print(product)
-    context.driver.find_element(By.ID, 'search').send_keys(product)
-    context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
+@then('Search results for {expected_result} are shown')
+def verify_search_results_correct(context, expected_result):
+    context.app.search_results_page.verify_search_results_correct()
 
 
-@when ('Click on Add to cart button')
+@then('Page URL has search term {expected_part_url}')
+def verify_search_results_page_url(context, expected_part_url):
+    context.app.search_results_page.verify_search_results_page_url(expected_part_url)
+
+
+@when('Click on Add to cart button')
 def click_on_cart(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='chooseOptionsButton']").click()
 
 
-@when ('Confirm Add to cart on side navigation')
+@when('Confirm Add to cart on side navigation')
 def click_on_side_navigation(context):
     context.driver.find_element(By.CSS_SELECTOR, "[id*='addToCartButton']").click()
 
@@ -83,8 +92,6 @@ def verify_items_in_cart(context):
 def open_target(context, product_id):
     context.driver.get(f'https://www.target.com/p/{product_id}')
 
-wait.until(EC.element_to_be_clickable(By.CSS_SELECTOR, "[class*='ButtonWrapper']")).click()
-
 
 @then('Verify user can click through colors')
 def click_and_verify_colors(context):
@@ -99,5 +106,4 @@ def click_and_verify_colors(context):
         actual_colors.append(selected_color)
 
     assert expected_colors == actual_colors, f"Expected {expected_colors} did not match actual {actual_colors}"
-
 
