@@ -2,6 +2,11 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 @given('Open Target main page')
 def open_target_main(context):
@@ -35,7 +40,6 @@ def verify_sign_in_form(context):
     assert 'Sign into your Target account' == sign_in_message, f"expected 'Sign into your Target account' but got {sign_in_message}"
 
 
-
 @when('Click Target Circle')
 def click_target_circle(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/GlobalHeader/UtilityHeader/TargetCircle']").click()
@@ -58,8 +62,6 @@ def search_product(context, product):
 def click_on_cart(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='chooseOptionsButton']").click()
 
-    sleep(3)
-
 
 @when ('Confirm Add to cart on side navigation')
 def click_on_side_navigation(context):
@@ -75,4 +77,27 @@ def view_cart_checkout(context):
 def verify_items_in_cart(context):
     items = context.driver.find_elements(By.CSS_SELECTOR, "[class*='styles__CartSummary']")
     assert 'items in cart' == items[0].text, f"Expected 'items in cart' but got {items[0].text}"
+
+
+@given('Open target product {product_id} page')
+def open_target(context, product_id):
+    context.driver.get(f'https://www.target.com/p/{product_id}')
+
+wait.until(EC.element_to_be_clickable(By.CSS_SELECTOR, "[class*='ButtonWrapper']")).click()
+
+
+@then('Verify user can click through colors')
+def click_and_verify_colors(context):
+    expected_colors = ['Black', 'Brown', 'Cream']
+    actual_colors = []
+
+    colors = context.driver.find_elements(By.CSS_SELECTOR, "[class*='ButtonWrapper']")
+    for color in colors[:3]:
+        color.click()
+        selected_color = context.driver.find_element(By.CSS_SELECTOR, "[class*='StyledVariationSelectorImage'] [class*='CellVariationHeaderWrapper']").text
+        selected_color = selected_color.split('\n')[1]
+        actual_colors.append(selected_color)
+
+    assert expected_colors == actual_colors, f"Expected {expected_colors} did not match actual {actual_colors}"
+
 

@@ -25,3 +25,5 @@ Feature: Shopping Cart tests
     And Confirm Add to cart on side navigation
     And View cart and check out
     Then Verify items are in cart
+
+
